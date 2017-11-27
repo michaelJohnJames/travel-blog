@@ -1,0 +1,10 @@
+<h1>Individual post</h1>
+
+<h3>This is the title of the post</h3>
+<%= @post.title %><br>
+<h3>This is the body of the post:</h3>
+<%= @post.body %>
+
+<br>
+<%= link_to 'Edit', edit_post_path %>
+<%= link_to 'Delete', post_path, method: :delete, data: {confirm: 'Are you sure?'} %>

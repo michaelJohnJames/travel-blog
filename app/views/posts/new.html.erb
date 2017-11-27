@@ -1,0 +1,15 @@
+<h1>Create a new post</h1>
+
+<%= form_for @post do |f| %>
+<%= f.file_field :avatar %>
+<br>
+
+<h3>Title:</h3>
+<%= f.text_field :title %>
+<br>
+<h3>Content:</h3>
+<%= f.text_area :body %>
+<br>
+<%= f.submit %>
+
+<% end %>

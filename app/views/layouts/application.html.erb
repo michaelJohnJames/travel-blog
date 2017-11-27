@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TravelBlog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <li><%= link_to 'Home', root_path %></li>
+      <li><%= link_to 'New', new_post_path %></li>
+<% if !user_signed_in? %>
+    <li><%= link_to 'Sign in', new_user_session_path %></li>
+    <li><%= link_to 'Sign up', new_user_registration_path %></li>
+    <% end %>
+    <% if user_signed_in? %>
+    <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'} %></li>
+<% end %>
+      </nav>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>

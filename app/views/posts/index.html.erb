@@ -1,0 +1,10 @@
+<h1>This is the list of all posts</h1>
+
+<% @posts.each do |p|%>
+<%= image_tag p.avatar.url(:medium) %>
+<a href="/posts/<%= p.id %>"><li><%= p.title %></li></a>
+<br>
+<%= p.body %><br>
+<%= p.user.email %>
+
+<% end %>
